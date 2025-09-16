@@ -28,17 +28,30 @@ As informações obtidas devem ser exibidas e estruturadas de acordo com a segui
 |         Valor da distribuidora       |    219,14   |
 |    Somatório de energia injetada     |     1950    |
 
+# Documentação do Teste 1
+
+- Escreva a documentação do teste 1 abaixo.
+
 # Teste 2
 
 Contexto: Você recebeu a fatura "fatura_cemig.pdf" e deve desenvolver um script para extrair seus dados. Antes de iniciar a programação, é essencial compreender e interpretar as informações presentes nesta fatura.
 
-Atividade: Analise a fatura e redija um documento respondendo os pontos abaixo. Ao finalizar, envie este documento em formato PDF para o e-mail falecom@dg.energy e lucas@dg.energy.
+Atividade: Analise a fatura e redija um documento respondendo os pontos abaixo. As respostas podem ser inseridas neste 'README'.
 
  - Identifique as principais diferenças entre a fatura "fatura_cemig.pdf" e uma fatura convencional de energia elétrica "fatura_cemig_convencional.pdf".
  - Descreva e explique os termos e valores apresentados na seção "Valores Faturados" da fatura "fatura_cemig.pdf".
  - Considerando que a instalação da "fatura_cemig.pdf" participa do Sistema de Compensação de Energia Elétrica, identifique e explique qual informação na seção "Informações Gerais" da fatura é considerada a mais importante.
  - Identifique o consumo da instalação referente ao mês de julho de 2023.
 
-# Observações
+Respostas teste 2:
+- Escreva suas respostas para o teste 2 abaixo.
 
-- Demonstrar proficiência no uso do Git e GitHub para a resolução do Teste 1 será considerado um diferencial na avaliação do candidato.
+
+# Requisitos dos Desafios:
+
+1. Utilize a linguagem Python para desenvolver a solução.
+2. No mesmo README, inclua uma seção detalhada que explique claramente os passos necessários para executar o código. Certifique-se de que as instruções sejam precisas, organizadas e fáceis de entender, pois os avaliadores seguirão essa documentação.
+3. Faça um fork do repositório, para iniciar o desenvolvimento.
+4. A entrega deve ser realizada por meio de um pull request para o repositório original. Caso não consiga, os arquivos podem ser enviados para o email falecom@dg.energy, porém com penalidade de pontos.
+5. Abra o pull request também faltando 5 minutos para o prazo final da entrega do teste. Se o pull request for realizado antes dos 5 minutos restantes haverá eliminação do candidato.
+6. A entrega deve ser realizada dentro do prazo estabelecido. Se o prazo não for cumprido, pontos serão retirados.
