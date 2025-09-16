@@ -54,4 +54,4 @@ Respostas teste 2:
 3. Faça um fork do repositório, para iniciar o desenvolvimento.
 4. A entrega deve ser realizada por meio de um pull request para o repositório original. Caso não consiga, os arquivos podem ser enviados para o email falecom@dg.energy, porém com penalidade de pontos.
 5. Abra o pull request também faltando 5 minutos para o prazo final da entrega do teste. Se o pull request for realizado antes dos 5 minutos restantes haverá eliminação do candidato.
-6. A entrega deve ser realizada dentro do prazo estabelecido de 17:30 hrs. Se o prazo não for cumprido, pontos serão retirados.
+6. A entrega deve ser realizada até às 17h30. Caso o prazo não seja cumprido, haverá perda de pontos.
