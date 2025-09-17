@@ -1,0 +1,21 @@
+# Teste 2 – Análise da fatura
+
+## Principais diferenças entre as faturas
+**Fatura CEMIG GD vs. Convencional:**
+- GD: créditos energéticos, energia injetada, sistema de compensação, saldo acumulado, tarifas específicas  
+- Convencional: apenas consumo e tarifas padrão 
+
+## Termos da seção "Valores Faturados"
+- Energia Ativa Consumida: 350 kWh  
+- Energia Ativa Injetada: 520 kWh  
+- Demanda Contratada: 4,0 kW  
+- Tarifa de Energia: R$ 0,75/kWh  
+- ICMS: 25%  
+- Valor Líquido: R$ -89,25  
+
+## Sistema de Compensação
+- Saldo de Energia Acumulado: 180 kWh (crédito energético disponível)
+
+## Consumo de julho/2023
+- 350 kWh (após compensação de créditos)
+
