@@ -23,11 +23,11 @@ with pdfplumber.open("./fatura_cpfl.pdf") as pdf:
     conteudo = re.search(padraoConteudo, pagina.extract_text_simple())
     conteudo = conteudo.groups()
 
-    dados = {"Mes" : conteudo[0], "Valor da distribuidora" : conteudo[2]}
+    dados = {"Mes" : [conteudo[0]], "Valor da distribuidora" : [conteudo[2]]}
 
     # Encontrar Instalação
     instalacao = linhas[18].split(" ")[1]
-    dados.update({"Instalação" : instalacao})
+    dados.update({"Instalação" : [instalacao]})
 
 
     #Encontrar Tarifa cheia (com impostos)
@@ -39,10 +39,23 @@ with pdfplumber.open("./fatura_cpfl.pdf") as pdf:
 
     tarifaTotal = 0
     for linha in linhasImpostos:
-        print(linha)
         tarifa = float(linha.split(" ")[8].replace(",","."))
         tarifaTotal += tarifa
 
-    dados.update({"Tarifa cheia (com impostos)" : tarifaTotal})
+    dados.update({"Tarifa cheia (com impostos)" : [tarifaTotal]})
 
+    #Encontrar Energia Injetada
+    padrao = r"Energ Atv Inj\. oUC mPT - TUSD.*"
+    energiaInjetada = re.findall(padrao, pagina.extract_text())
+
+    totalEnergia = 0
+    for linha in energiaInjetada:
+        linha = linha.split(" ")[8].replace(".", "").replace(",", ".")
+        totalEnergia += float(linha)
+
+    dados.update({"Somatório de energia injetada": [totalEnergia]})
+
+    #Cria o DataFrame
+    pd.set_option('display.max_columns', None)
+    df = pd.DataFrame(dados)
 
