@@ -30,7 +30,19 @@ As informações obtidas devem ser exibidas e estruturadas de acordo com a segui
 
 # Documentação do Teste 1
 
-- Escreva a documentação do teste 1 abaixo.
+Bibliotecas utilizadas:
+    pdfplumber
+    Pandas
+    re
+
+    para utilizar a ferramenta basta rodar o código:
+
+        python3 read.py
+
+    para testar com outros arquivos basta informar o caminho como parâmetro 'src' da função.
+    a função criada retorna um objeto DataFrame da biblioteca Pandas, portanto, para visualizar a tabela é necessário printar a função sendo chamada, ou exportar para csv ou qualquer outra forma viável para dataframes pandas.
+
+    Note que, devido ao tempo e pressão, a ferramenta foi escrita em cima da estrutura do pdf determinado pelo enunciado do desafio. Utilizar a ferramenta com pdfs com estruturas diferentes muito provavelmente ocasionará em uma saída insatisfatória. 
 
 # Teste 2
 
@@ -44,8 +56,24 @@ Atividade: Analise a fatura e redija um documento respondendo os pontos abaixo. 
  - Identifique o consumo da instalação referente ao mês de julho de 2023.
 
 Respostas teste 2:
-- Escreva suas respostas para o teste 2 abaixo.
 
+### 1ª Pergunta:
+    - A fatura fatura_cemig apresenta muito mais informações na seção Valores Faturados em comparação à fatura_cemig_convencional.
+    - A fatura_cemig apresenta dados referentes à valores compensados por, acredito eu, geração de energia própria, além dos custos da geração própria. 
+    - A fatura_cemig também apresenta o saldo atual de geração na seção "Informações Gerais".
+    - Conclui-se que a fatura_cemig é a fatura de uma instação participante do Sistema de Compensação de Energia Elétrica, enquanto o cliente da fatura_cemig_convencional não é.
+### 2ª Pergunta:
+    - Energia Elétrica: Energia elétrica consumida pelo cliente.
+    - Energia SCEE s/ ICMS: Energia do Sistema de Compensação de Energia Elétrica isenta do imposto Imposto sobre Circulação de Mercadorias e Serviços.
+    - Energia compensada GD II: Energia injetada na rede elétrica pelo sistema de geração de energia do cliente.
+    - Energia comp. adicional: Compensação da diferença entre a energia SCEE ISENTA  e a energia compensada GD II. (https://www.cemig.com.br/atendimento/entenda-sua-conta/)
+    - Bônus Itaipu art 21 Lei 10438: Repasse ao consumidor do saldo positivo da conta de comercialização da energia produzida pela hidrelétrica. 
+    - Ass Combt Câncer (37)3512-1528: Valor de uma assinatura descontada na fatura da conta de energia do cliente.
+    - Contrib Ilum Publica Municipal: Valor referente à contribuição com os gastos da iluminação pública municipal.
+### 3ª Pergunta:
+    - A seção mais importante das Informações Gerais da fatura de uma instalação que participa do SCEE é o 'SALDO ATUAL DE GERAÇÂO' que indica os saldos, em kWh, que a instalação tem como crédito para abatimento das próximas faturas.
+### 4º Pergunta:
+    - O consumo total pode ser verificado no Histórico de Consumo. O consumo do mês Julho de 2023 foi 199 kWh. O valor também pode ser obtido da soma dos valores de Energia Elétrica e Energia SCEE s/ ICMS na seção Valores Faturados.
 
 # Requisitos dos Desafios:
 
