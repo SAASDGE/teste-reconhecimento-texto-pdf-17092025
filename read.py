@@ -19,16 +19,18 @@ def normalizar_numero(valor: str) -> float:
     valor = valor.replace(".", "").replace(",", ".")
     return float(valor)
 
+def extrair_instalacao(texto: str) -> str:
+    match = re.search(r"\b\d{8,11}\b", texto)
+    return match.group(0) if match else None
+
+def extrair_mes(texto: str) -> str:
+    match = re.search(r"(JAN|FEV|MAR|ABR|MAI|JUN|JUL|AGO|SET|OUT|NOV|DEZ)/\d{2,4}", texto)
+    return match.group(0) if match else None
+
 def extrair_informacoes(texto: str) -> dict:
-    match_instalacao = re.search(r"\b(\d{8})\b", texto)
-    instalacao = match_instalacao.group(1) if match_instalacao else None
-
-    match_mes = re.search(r"INSTALAÇÃO\s+([A-Z]{3}/\d{4})", texto)
-    mes_ref = match_mes.group(1) if match_mes else None
-
     return {
-        "Instalação": instalacao,
-        "Mês": mes_ref
+        "Instalação": extrair_instalacao(texto),
+        "Mês": extrair_mes(texto)
     }
 
 def main():
