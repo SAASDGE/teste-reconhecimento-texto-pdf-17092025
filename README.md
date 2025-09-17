@@ -32,6 +32,40 @@ As informações obtidas devem ser exibidas e estruturadas de acordo com a segui
 
 - Escreva a documentação do teste 1 abaixo.
 
+## Descrição do Problema :
+A partir de uma fatura de energia em PDF, deve ser possível extrair os seus dados como : Numero de Instalação, Mês da Fatura, Tarifa Cheia, Valor da distribuidora, Somatório das componentes de energia injetada
+
+## Solução : 
+Para a solução desse problema utilizei as bibliotecas como pdfplumber (bilioteca recomendada) para a leitura e extração do texto do PDF, essa biblioteca consegue fazer um bom parse do problema de uma forma simples, além disso utilizei a Expressões regulares onde achei possível para extrair o texto de uma forma rápida, no fim, para uma apresentação dos dados utilizei um DataFrame do Pandas para manter uma boa organização e leitura
+
+## Python e Bibliotecas
+
+Python - 3.13
+
+pdfplumber - 0.11.7
+
+pandas - 2.3.2
+
+## Como executar :
+No diretório do projeto : 
+
+1. Criar o ambiente virtual:
+```bash
+python -m venv venv
+```
+2. Ativar o ambiente:
+
+```bash
+venv\Scripts\activate
+```
+3. Instalar as dependencias
+```bash
+pip install pandas pdfplumber
+```
+4. Executar o projeto
+```bash
+python read.py
+```
 # Teste 2
 
 Contexto: Você recebeu a fatura "fatura_cemig.pdf" e deve desenvolver um script para extrair seus dados. Antes de iniciar a programação, é essencial compreender e interpretar as informações presentes nesta fatura.
@@ -44,7 +78,14 @@ Atividade: Analise a fatura e redija um documento respondendo os pontos abaixo. 
  - Identifique o consumo da instalação referente ao mês de julho de 2023.
 
 Respostas teste 2:
-- Escreva suas respostas para o teste 2 abaixo.
+- Como principais diferenças entra as duas faturas eu pude indentificar : Na fatura_cemig existem campos adicionais na tabela "Valores Faturados", como "Energia compensada GD II" e "Energia SCEE s/ ICMS", o que não existe na fatura_cemig_convencional, além disso também pude identificar uma mudança de "Bifasico" para "Monofasico" na fatura_cemig_convencional.Uma outra mudança é o "SALDO ATUAL DE GERAÇÃO: 234,63 kWh" presente na fatura_cemig
+- Na fatura_cemig possui termos diferentes como Energia compensada GD II, esses termos significam : 
+  * Energia Compensada GD II : A Geração Distribuída(GD) é um termo para pessoas que possuem uma fonte de energia em casa, e compartilham sua energia com a distribuidora, tendo então tanto um consumo próprio, quanto um distribuído, ele recebe uma compensação por isso, como na fatura possui o valor -67,24
+  * Energia SCEE s/ ICMS : Esse termo é a energia que é compartilhada com a concessionária de energia sem os impostos de ICMS
+  * Energia comp. adicional : Esse adicional é uma energia que é compensada além daquela produzida pela pessoa, podendo assim gerar um desconto na sua fatura final
+  * Bônus Itaipu art 21 Lei 10438 : É um bônus que pode gerar um desconto na fatura final do cliente, com relação a usina de Itaipu
+- A informação mais importante pode ser a frase "Unidade faz parte de sistema de compensação de energia", o que nos diz que essa pessoa participa do Sistema de Compensação, além do início do parágrafo com o seu saldo atual de geração
+- O consumo referente ao mês de Julho de 2023 foi de 199 kWh na fatura_cemig
 
 
 # Requisitos dos Desafios:
