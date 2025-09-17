@@ -30,7 +30,31 @@ As informações obtidas devem ser exibidas e estruturadas de acordo com a segui
 
 # Documentação do Teste 1
 
-- Escreva a documentação do teste 1 abaixo.
+## Instruções para execução do código
+
+1. **Clonar repositório**: 
+   ```bash
+   git clone https://github.com/SAASDGE/teste-reconhecimento-texto-pdf-17092025.git
+   ```
+2. **Navegar até o diretório do projeto**:
+   ```bash
+   cd teste-reconhecimento-texto-pdf-17092025
+    ```
+3. **Criar e ativar um ambiente virtual**:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # Se no Windows use `venv\Scripts\activate`
+    ```
+4. **Instalar as dependências necessárias**:
+   ```bash
+    pip install -r requirements.txt
+   ```
+5. **Executar o script**:
+   ```bash
+   python read.py
+   # Opcionalmente:
+   python3 read.py
+   ```  
 
 # Teste 2
 
@@ -44,7 +68,20 @@ Atividade: Analise a fatura e redija um documento respondendo os pontos abaixo. 
  - Identifique o consumo da instalação referente ao mês de julho de 2023.
 
 Respostas teste 2:
-- Escreva suas respostas para o teste 2 abaixo.
+
+### 1. 
+A fatura convencional (`fatura_cemig_convencional.pdf`) apresenta apenas itens básicos em “Valores Faturados” como consumo de energia elétrica em kWh, contribuição de iluminação pública e o total a ser pago.
+A fatura `fatura_cemig.pdf` possui outros itens relacionados ao SCEE, como “Energia SCEE s/ ICMS”, “Energia compensada GD II”, “Energia comp. adicional”, bônus Itaipu por lei e saldo de geração (na sessão “Informações Técnicas”). Ou seja, enquanto `fatura_cemig_convencional.pdf` reflete apenas o consumo, a fatura `fatura_cemig.pdf` detalha créditos e compensações de energia.
+
+### 2. 
+Na `fatura_cemig.pdf`, a seção “Valores Faturados” mostra diferentes componentes: “Energia Elétrica” é consumo efetivo de energia em kWh, “Energia SCEE s/ ICMS” é energia usada sujeita ao sistema de compensação, “Energia SCEE s/ ICMS” é energia compensada, pode-se dizer "devolvida" ao sistema, “Energia comp. adicional” é um termo que a CEMIG usa para indicar compensação extra, “Bônus Itaipu art 21 Lei 10438” é um bônus previsto em lei decorrente da geração de energia pela Usina de Itaipu para consumidores do estado de Minas Gerais, “Ass Combt Câncer (37)3512-1528” é uma taxa externa cobrada na fatura por escolha do cliente, e “Contribuição de Iluminação Pública” é uma cobrança obrigatória para a manutenção da iluminação pública. Todos esses itens revelam como o consumo bruto, descontos por geração própria e os créditos de energia que mudam o valor final a ser pago, barateando a conta.
+
+### 3. 
+Na fatura `fatura_cemig.pdf`, a informação mais relevante em “Informações Gerais” é o “SALDO ATUAL DE GERAÇÃO: 234,63 kWh”, pois indica o crédito acumulado de energia da unidade consumidora no sistema de compensação. Esse saldo define quanto de energia gerada e não consumida poderá ser usado para abater valores em contas futuras, sendo essencial para a gestão dos benefícios do SCEE.
+
+### 4. 
+De acordo com o histórico de consumo da fatura `fatura_cemig.pdf`, o consumo registrado em **julho de 2023 foi de 199 kWh**. Esse valor corresponde ao uso líquido da instalação no período de 31 dias e serve de base para o cálculo dos créditos e compensações de energia daquele mês.
+
 
 
 # Requisitos dos Desafios:
