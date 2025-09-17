@@ -61,15 +61,24 @@ def extrair_tarifa_cheia(texto: str) -> float:
     return None
 
 def extrair_valor_distribuidora(texto: str) -> float:
-    match = re.search(r"Total Distribuidora\s+([\d.,]+)", texto, re.IGNORECASE)
+    match = re.search(r"Total Consolidado\s+([\d.,]+)", texto, re.IGNORECASE)
     return normalizar_numero(match.group(1)) if match else None
 
 def extrair_energia_injetada(texto: str) -> float:
-    matches = re.findall(r"Inj.*?(\d{1,3}(?:\.\d{3})*,\d{3}) kWh", texto)
-    valores = [normalizar_numero(v.replace(".", "").replace(",", ".")) for v in matches]
-    if valores:
-        return int(round(sum(valores)))
+    pattern = r"Inj[^\n\r]*?([A-Z]{3}/\d{2,4})\s+(\d{1,3}(?:\.\d{3})*,\d{2,3})\s*kWh"
+    matches = re.findall(pattern, texto, flags=re.IGNORECASE)
+    valores_por_mes = {}
+    for mes, valor in matches:
+        mes = mes.upper()
+        num = normalizar_numero(valor)
+        if num is None:
+            continue
+        if mes not in valores_por_mes:
+            valores_por_mes[mes] = num
+    if valores_por_mes:
+        return int(round(sum(valores_por_mes.values())))
     return None
+
 
 def extrair_informacoes(texto: str) -> dict:
     logging.info("Extraindo informações da fatura...")
