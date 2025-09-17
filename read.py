@@ -33,11 +33,19 @@ def extrair_tarifa(texto: str) -> float:
         return normalizar_numero(matches[-1])
     return None
 
+def extrair_valor_distribuidora(texto: str) -> float:
+    """Extrai o valor da distribuidora (pode aparecer como 'Total Distribuidora')."""
+    match = re.search(r"Total Distribuidora\s+([\d\.,]+)", texto, re.IGNORECASE)
+    if match:
+        return normalizar_numero(match.group(1))
+    return None
+
 def extrair_informacoes(texto: str) -> dict:
     return {
         "Instalação": extrair_instalacao(texto),
         "Mês": extrair_mes(texto),
-        "Tarifa cheia (com impostos)": extrair_tarifa(texto)
+        "Tarifa cheia (com impostos)": extrair_tarifa(texto),
+        "Valor da distribuidora": extrair_valor_distribuidora(texto)
     }
 
 def main():
