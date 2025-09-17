@@ -27,10 +27,17 @@ def extrair_mes(texto: str) -> str:
     match = re.search(r"(JAN|FEV|MAR|ABR|MAI|JUN|JUL|AGO|SET|OUT|NOV|DEZ)/\d{2,4}", texto)
     return match.group(0) if match else None
 
+def extrair_tarifa(texto: str) -> float:
+    matches = re.findall(r"\d{1,3}(?:\.\d{3})*,\d{5,}", texto)
+    if matches:
+        return normalizar_numero(matches[-1])
+    return None
+
 def extrair_informacoes(texto: str) -> dict:
     return {
         "Instalação": extrair_instalacao(texto),
-        "Mês": extrair_mes(texto)
+        "Mês": extrair_mes(texto),
+        "Tarifa cheia (com impostos)": extrair_tarifa(texto)
     }
 
 def main():
