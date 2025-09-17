@@ -68,7 +68,14 @@ Atividade: Analise a fatura e redija um documento respondendo os pontos abaixo. 
 
 Respostas teste 2:
 
-- Escreva suas respostas para o teste 2 abaixo.
+1. **Principais Diferenças entre as Faturas `fatura_cemig.pdf` e `fatura_cemig_convencional.pdf`:**
+   * A fatura convencional (`fatura_cemig_convencional.pdf`) apresenta um modelo de cobrança mais simples, baseado apenas no consumo de energia elétrica, que é multiplicado por uma tarifa para se chegar ao valor final. Em contrapartida, a `fatura_cemig.pdf` possui uma estrutura de débitos e créditos. Nela, são apresentados tanto a energia consumida da rede quanto os créditos provenientes da energia injetada, que são utilizados para abater o valor a pagar. Essa diferença é refletida nos itens faturados, onde a `fatura_cemig.pdf` exibe termos como "Energia compensada GD II" com valores negativos e na seção "Informações Gerais", que contém o "SALDO ATUAL DE GERAÇÃO", um campo inexistente na fatura convencional.
+2. **Descrição dos Termos em "Valores Faturados" da `fatura_cemig.pdf`:**
+   * A seção "Valores Faturados" da `fatura_cemig.pdf` detalha o balanço entre o consumo e os créditos de energia. O item "Energia Elétrica" corresponde a uma parcela do consumo faturada diretamente. A "Energia SCEE s/ ICMS" representa a energia consumida da rede que pode ser abatida por créditos. A compensação é evidenciada pelo item "Energia compensada GD II", que é o crédito em valor negativo referente à energia injetada na rede. Adicionalmente, a fatura pode apresentar "Energia comp. adicional", que é um crédito extra para abater outros débitos, e outros valores como o "Bônus Itaipu" e taxas de terceiros, como a Contribuição de Iluminação Pública Municipal.
+3. **Informação Mais Importante em "Informações Gerais" na `fatura_cemig.pdf`**:
+   * A informação mais importante é o "SALDO ATUAL DE GERAÇÃO: 234,63 kWh", pois representa o total de créditos de energia, medido em kWh, que o consumidor acumulou por ter injetado mais energia na rede do que consumiu. Esse saldo funciona como um "banco de energia" utilizado automaticamente para abater o consumo e reduzir o valor das faturas futuras. Portanto, é o principal indicador para o consumidor acompanhar a o funcionamento do seu sistema de geração e a economia obtida.
+4. **Consumo Referente a Julho de 2023 na `fatura_cemig.pdf`**:
+   * Conforme a tabela "Histórico de Consumo", o consumo de energia elétrica da instalação referente ao mês de julho de 2023 foi de **199 kWh**.
 
 # Requisitos dos Desafios:
 
