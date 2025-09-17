@@ -30,7 +30,8 @@ As informações obtidas devem ser exibidas e estruturadas de acordo com a segui
 
 # Documentação do Teste 1
 
-- Escreva a documentação do teste 1 abaixo.
+Para funcionalidade correta do código deverão estar instaladas as bibilotecas pdfplumber e pandas junto ao python e os arquivos pdf devem estar juntos também.
+Para aqueles que não possuiam as bibliotecas instaladas, assim como eu, devem usar o comando pip install pdfplumber e pip install pandas no terminal.
 
 # Teste 2
 
@@ -44,7 +45,15 @@ Atividade: Analise a fatura e redija um documento respondendo os pontos abaixo. 
  - Identifique o consumo da instalação referente ao mês de julho de 2023.
 
 Respostas teste 2:
-- Escreva suas respostas para o teste 2 abaixo.
+- Dentre as diferenças entre as faturas, nota-se que uma é referente a uma fatura residencial convencional e a outra é integra um sistema de compensação de energia elétrica.
+- Em "Valores Faturados" da fatura "fatura_cemig.pdf", aparecem alguns termos que possuem como significado: 
+Energia Elétrica: Este é o valor da energia consumida diretamente da rede da distribuidora;
+Energia SCEE s/ ICMS: Refere-se à energia consumida que será compensada pelo sistema de geração distribuída;
+Energia compensada GD II: Este item representa a energia gerada pela própria unidade e injetada na rede, que é utilizada para abater o consumo da "Energia SCEE s/ ICMS";
+Energia comp. adicional: Indica um valor adicional de energia compensada;
+- Com base nas definições anteriores acredito que em "Informações Gerais" a informação mais relevante seja o saldo atual de geração, que no documento indica 234,63 kWh, podendo ser convertido em descontos na conta.
+- De acordo com o documento o consumo de instalação em julho de 2023 foi de 199 kWh
+
 
 
 # Requisitos dos Desafios:
