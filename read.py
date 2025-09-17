@@ -34,10 +34,15 @@ def extrair_tarifa(texto: str) -> float:
     return None
 
 def extrair_valor_distribuidora(texto: str) -> float:
-    """Extrai o valor da distribuidora (pode aparecer como 'Total Distribuidora')."""
     match = re.search(r"Total Distribuidora\s+([\d\.,]+)", texto, re.IGNORECASE)
     if match:
         return normalizar_numero(match.group(1))
+    return None
+
+def extrair_soma_injecao(texto: str) -> float:
+    matches = re.findall(r"(\d{1,3}(?:\.\d{3})*,\d+)-", texto)
+    if matches:
+        return sum(normalizar_numero(m) for m in matches if m)
     return None
 
 def extrair_informacoes(texto: str) -> dict:
@@ -45,7 +50,8 @@ def extrair_informacoes(texto: str) -> dict:
         "Instalação": extrair_instalacao(texto),
         "Mês": extrair_mes(texto),
         "Tarifa cheia (com impostos)": extrair_tarifa(texto),
-        "Valor da distribuidora": extrair_valor_distribuidora(texto)
+        "Valor da distribuidora": extrair_valor_distribuidora(texto),
+        "Somatório de energia injetada": extrair_soma_injecao(texto)
     }
 
 def main():
