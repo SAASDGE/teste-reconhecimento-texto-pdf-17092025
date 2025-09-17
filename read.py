@@ -54,10 +54,18 @@ def extrair_informacoes(texto: str) -> dict:
         "Somatório de energia injetada": extrair_soma_injecao(texto)
     }
 
+def processar_faturas(lista_arquivos: list) -> pd.DataFrame:
+    resultados = []
+    for arquivo in lista_arquivos:
+        texto = extrair_texto_pdf(arquivo)
+        info = extrair_informacoes(texto)
+        resultados.append(info)
+    return pd.DataFrame(resultados)
+
 def main():
-    caminho_pdf = "fatura_cpfl.pdf"
-    texto = extrair_texto_pdf(caminho_pdf)
-    print(texto[:1000])
+    arquivos = ["fatura_cpfl.pdf", "fatura_cemig.pdf", "fatura_cemig_convencional.pdf"]
+    df = processar_faturas(arquivos)
+    print(df)
 
 if __name__ == "__main__":
     main()
